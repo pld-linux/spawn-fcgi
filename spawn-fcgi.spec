@@ -1,12 +1,12 @@
 Summary:	Spawn fcgi-process directly
 Summary(pl):	Bezpo¶rednie uruchamianie procesów fcgi
 Name:		spawn-fcgi
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	Artistic
 Group:		Applications
 Source0:	http://www.incremental.de/products/lighttpd/download/%{name}-%{version}.tar.gz
-# Source0-md5:	c0c298132db154008ea138f3a0329bb2
+# Source0-md5:	6bda08629f3f88dc9a4ff24185bb31bc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
