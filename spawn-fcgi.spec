@@ -1,4 +1,5 @@
-Summary:	spawn fcgi-process directly
+Summary:	Spawn fcgi-process directly
+Summary(pl):	Bezpo¶rednie uruchamianie procesów fcgi
 Name:		spawn-fcgi
 Version:	1.1.0
 Release:	1
@@ -9,8 +10,12 @@ Source0:	http://www.incremental.de/products/lighttpd/download/%{name}-%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-spawn-fcgi is used to spawn fcgi-process directly without the help of a
-webserver or the programm itself.
+spawn-fcgi is used to spawn fcgi-process directly without the help of
+a webserver or the programm itself.
+
+%description -l pl
+spawn-fcgi s³u¿y do uruchamiania procesów fcgi bezpo¶rednio, bez
+pomocy serwera WWW ani samego programu.
 
 %prep
 %setup -q
