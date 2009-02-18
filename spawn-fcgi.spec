@@ -10,7 +10,6 @@ Source0:	%{name}.tar.bz2
 URL:		http://redmine.lighttpd.net/projects/spawn-fcgi
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir	%{_prefix}/sbin
@@ -36,8 +35,6 @@ pomocy serwera WWW ani samego programu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man1}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
