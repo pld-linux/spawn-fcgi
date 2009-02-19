@@ -2,11 +2,11 @@ Summary:	Spawn fcgi-process directly
 Summary(pl.UTF-8):	Bezpośrednie uruchamianie procesów fcgi
 Name:		spawn-fcgi
 Version:	1.6.0
-Release:	1
+Release:	1.rc1.1
 License:	BSD
 Group:		Networking/Daemons/HTTP
-Source0:	%{name}.tar.bz2
-# Source0-md5:	dd760c6834744cc571b194a0853dc7b3
+Source0:	http://www.lighttpd.net/download/%{name}-%{version}rc1-r16.tar.bz2
+# Source0-md5:	19099d04b133222329f1f6eed12b6398
 URL:		http://redmine.lighttpd.net/projects/spawn-fcgi
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -23,7 +23,7 @@ spawn-fcgi służy do uruchamiania procesów fcgi bezpośrednio, bez
 pomocy serwera WWW ani samego programu.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %{__aclocal}
