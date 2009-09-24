@@ -43,6 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README
+%doc AUTHORS COPYING NEWS README doc/run-*
 %attr(755,root,root) %{_sbindir}/spawn-fcgi
 %{_mandir}/man1/spawn-fcgi.1*
