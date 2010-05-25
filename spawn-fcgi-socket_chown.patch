@@ -1,0 +1,28 @@
+--- spawn-fcgi-1.6.3-old/src/spawn-fcgi.c	2010-05-25 13:38:12.000000000 +0200
++++ spawn-fcgi-1.6.3/src/spawn-fcgi.c	2010-05-25 14:04:23.000000000 +0200
+@@ -486,8 +486,8 @@
+ 		case 'c': if (i_am_root) { changeroot = optarg; }/* chroot() */ break;
+ 		case 'u': if (i_am_root) { username = optarg; } /* set user */ break;
+ 		case 'g': if (i_am_root) { groupname = optarg; } /* set group */ break;
+-		case 'U': if (i_am_root) { sockusername = optarg; } /* set socket user */ break;
+-		case 'G': if (i_am_root) { sockgroupname = optarg; } /* set socket group */ break;
++		case 'U': sockusername = optarg; /* set socket user */ break;
++		case 'G': sockgroupname = optarg; /* set socket group */ break;
+ 		case 'S': if (i_am_root) { sockbeforechroot = 1; } /* open socket before chroot() */ break;
+ 		case 'M': sockmode = strtol(optarg, NULL, 0); /* set socket mode */ break;
+ 		case 'n': nofork = 1; break;
+@@ -614,7 +614,13 @@
+ 			setuid(uid);
+ 		}
+ 	} else {
+-		if (-1 == (fcgi_fd = bind_socket(addr, port, unixsocket, 0, 0, sockmode)))
++		uid_t sockuid;
++		gid_t sockgid;
++
++		if (-1 == find_user_group(sockusername, sockgroupname, &sockuid, &sockgid, NULL))
++			return -1;
++
++		if (-1 == (fcgi_fd = bind_socket(addr, port, unixsocket, sockuid, sockgid, sockmode)))
+ 			return -1;
+ 	}
+ 
