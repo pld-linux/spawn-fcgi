@@ -1,12 +1,12 @@
 Summary:	Spawn fcgi-process directly
 Summary(pl.UTF-8):	Bezpośrednie uruchamianie procesów fcgi
 Name:		spawn-fcgi
-Version:	1.6.3
-Release:	3
+Version:	1.6.4
+Release:	1
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	http://www.lighttpd.net/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	787ed2f88d2204bf1fe4fbd6e509d1d7
+# Source0-md5:	bf269849995ab8b3a8989779fa5818aa
 # Patch to chown & chmod the created unix socket even when run as a regular user.
 Patch0:		%{name}-socket_chown.patch
 URL:		http://redmine.lighttpd.net/projects/spawn-fcgi
@@ -26,7 +26,7 @@ pomocy serwera WWW ani samego programu.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1 update or drop
 
 %build
 %{__aclocal}
