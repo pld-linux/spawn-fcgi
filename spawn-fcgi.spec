@@ -26,7 +26,7 @@ pomocy serwera WWW ani samego programu.
 
 %prep
 %setup -q
-#%patch0 -p1 update or drop
+#%%patch0 -p1 update or drop
 
 %build
 %{__aclocal}
