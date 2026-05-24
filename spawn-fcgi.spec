@@ -2,7 +2,7 @@ Summary:	Spawn fcgi-process directly
 Summary(pl.UTF-8):	Bezpośrednie uruchamianie procesów fcgi
 Name:		spawn-fcgi
 Version:	1.6.4
-Release:	2
+Release:	3
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	http://www.lighttpd.net/download/%{name}-%{version}.tar.bz2
